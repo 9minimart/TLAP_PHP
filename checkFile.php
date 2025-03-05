@@ -20,7 +20,7 @@ while ($startDate <= $endDate) {
 
     // Check for each symbolID
     foreach ($symbolIDs as $symbolID) {
-        $filename = "orderbook-{$symbolID}-{$timestamp}.json";
+        $filename = "OrderBook/orderbook-{$symbolID}-{$timestamp}.json";
         
         // Check if the file exists
         if (!file_exists($filename)) {
@@ -31,7 +31,8 @@ while ($startDate <= $endDate) {
             // Add missing file details to the array
             $missingFiles[] = [
                 'symbolID' => $symbolID,
-                'time' => $unixTimestamp
+                'time' => $unixTimestamp,
+                'filename' => $filename
             ];
         }
     }
